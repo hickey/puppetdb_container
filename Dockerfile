@@ -4,7 +4,7 @@ ARG vcs_ref
 ARG build_date
 ARG version="5.1.5"
 
-ENV PUPPETDB_VERSION="$version"
+ENV PUPPETDB_VERSION="5.2.4"
 ENV DUMB_INIT_VERSION="1.2.1"
 ENV UBUNTU_CODENAME="xenial"
 ENV PUPPETDB_DATABASE_CONNECTION="//postgres:5432/puppetdb"
@@ -44,7 +44,7 @@ RUN rm -fr /etc/puppetlabs/puppetdb/conf.d
 COPY conf.d /etc/puppetlabs/puppetdb/conf.d
 
 # Persist the agent SSL certificate.
-VOLUME /etc/puppetlabs/puppet/ssl/
+#VOLUME /etc/puppetlabs/puppet/ssl/
 # /etc/puppetlabs/puppetdb/ssl is automatically populated from here and
 # doesn't need a separate volume.
 
